@@ -20,15 +20,33 @@ There are no automated tests. Validation is done by playing the game in-browser 
 
 ## Git Workflow
 
-All changes should be committed and pushed to GitHub after every meaningful change:
+Remote: `https://github.com/Edwin1234569/browser-games` (branch: `main`)
+
+**After every meaningful change, commit and push immediately** — do not batch unrelated changes into one commit. This keeps the history clean and every state recoverable.
 
 ```bash
 git add <file>
-git commit -m "descriptive message"
+git commit -m "short imperative summary
+
+Optional body explaining why, not what.
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 git push
 ```
 
-Remote: `https://github.com/Edwin1234569/browser-games` (branch: `main`)
+**Commit message rules:**
+- First line: imperative mood, ≤ 72 chars (e.g. `Add shield power-up to shooter`, not `Added` or `Adding`)
+- Use the body for *why* something changed if it isn't obvious from the diff
+- Always include the `Co-Authored-By` trailer above
+
+**When to commit** — treat each of these as its own commit:
+- A new feature or mechanic is working
+- A bug is fixed
+- A visual/audio change is complete
+- A new game file is added
+- CLAUDE.md or repo config is updated
+
+Never leave the working tree dirty at the end of a session.
 
 ## Architecture
 
